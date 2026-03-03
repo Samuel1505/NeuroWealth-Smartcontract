@@ -672,7 +672,7 @@ fn test_post_yield_deposit_priced_correctly() {
     token_client.mint(&user2, &amount2);
     client.deposit(&user2, &amount2);
 
-    let shares1 = client.get_shares(&user1);
+    let _shares1 = client.get_shares(&user1);
     let shares2 = client.get_shares(&user2);
 
     // First user should own more value per share than the second user,
@@ -781,7 +781,7 @@ fn test_withdraw_fails_with_insufficient_shares() {
     token_client.mint(&user, &amount);
     client.deposit(&user, &amount);
 
-    let withdraw_amount = amount * 2;
+    let _withdraw_amount = amount * 2;
 
     // This should panic due to insufficient shares; we rely on the test runner
     // to catch the panic. Uncomment the block below if you switch to a harness
@@ -848,7 +848,7 @@ fn test_update_total_assets_requires_agent() {
     let (contract_id, agent, _owner, _usdc_token) = setup_vault_with_token(&env);
     let client = NeuroWealthVaultClient::new(&env, &contract_id);
 
-    let not_agent = Address::generate(&env);
+    let _not_agent = Address::generate(&env);
     let new_total = 1_000_000_i128;
 
     // Call succeeds when invoked by the correct agent
